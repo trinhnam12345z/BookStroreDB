@@ -1,6 +1,6 @@
 ﻿USE [BookStore]
 GO
-/****** Object:  Table [dbo].[Books]    Script Date: 12/4/2020 3:10:40 PM ******/
+/****** Object:  Table [dbo].[Books]    Script Date: 12/4/2020 3:16:45 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -19,9 +19,27 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+SET IDENTITY_INSERT [dbo].[Books] ON 
+GO
+INSERT [dbo].[Books] ([Bookid], [BookName], [Author], [Publisher], [PublishYear], [Price], [IsDelete]) VALUES (1, N'nam', N'nma', N'dssfgd', 2000, 3233, 0)
+GO
+INSERT [dbo].[Books] ([Bookid], [BookName], [Author], [Publisher], [PublishYear], [Price], [IsDelete]) VALUES (2, N'dat', N'dat', N'dad', 54556, 6645, 0)
+GO
+INSERT [dbo].[Books] ([Bookid], [BookName], [Author], [Publisher], [PublishYear], [Price], [IsDelete]) VALUES (3, N'anh', N'anh', N'anh', 2000, 20000, 0)
+GO
+INSERT [dbo].[Books] ([Bookid], [BookName], [Author], [Publisher], [PublishYear], [Price], [IsDelete]) VALUES (4, N'anh', N'anh', N'anh', 2000, 20000, 1)
+GO
+INSERT [dbo].[Books] ([Bookid], [BookName], [Author], [Publisher], [PublishYear], [Price], [IsDelete]) VALUES (5, N'nn', N'sfdsd', N'anh', 2000, 20000, 1)
+GO
+INSERT [dbo].[Books] ([Bookid], [BookName], [Author], [Publisher], [PublishYear], [Price], [IsDelete]) VALUES (6, N'Ông lão đánh cá và con cá vàng', N'Nam', N'Kim Đồng', 2020, 100000, 0)
+GO
+INSERT [dbo].[Books] ([Bookid], [BookName], [Author], [Publisher], [PublishYear], [Price], [IsDelete]) VALUES (7, N'Ông lão đánh cá và con cá vàng', N'Nam', N'Kim Đồng', 2020, 100000, 1)
+GO
+SET IDENTITY_INSERT [dbo].[Books] OFF
+GO
 ALTER TABLE [dbo].[Books] ADD  DEFAULT ((0)) FOR [IsDelete]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_CreateBook]    Script Date: 12/4/2020 3:10:40 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_CreateBook]    Script Date: 12/4/2020 3:16:46 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -97,7 +115,7 @@ BEGIN
 	END CATCH
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_DeleteBook]    Script Date: 12/4/2020 3:10:40 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_DeleteBook]    Script Date: 12/4/2020 3:16:46 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -152,7 +170,7 @@ BEGIN
 	END CATCH
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_GetBooks]    Script Date: 12/4/2020 3:10:40 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_GetBooks]    Script Date: 12/4/2020 3:16:46 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -175,7 +193,7 @@ BEGIN
 	  WHERE IsDelete = 0
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_ShowBooks]    Script Date: 12/4/2020 3:10:40 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_ShowBooks]    Script Date: 12/4/2020 3:16:46 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -206,7 +224,7 @@ BEGIN
 		SELECT @BookId AS BookId, @Message AS [Message]
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_UpdateBook]    Script Date: 12/4/2020 3:10:40 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_UpdateBook]    Script Date: 12/4/2020 3:16:46 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
