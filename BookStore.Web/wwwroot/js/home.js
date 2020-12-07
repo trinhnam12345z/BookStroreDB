@@ -8,12 +8,12 @@ home.tbBook = function () {
         success: function (data) {
             $.each(data, function (i, v) {
                 $('#tbBook>tbody').append(`<tr>
-                                              <th scope="row">${v.BookId}</th>
-                                              <td>${v.BookName}</td>
-                                              <td>${v.Author}</td>
-                                              <td>${v.Publisher}</td>
-                                              <td>${v.PublishYear}</td>
-                                              <td>${v.Price}</td>
+                                              <th scope="row">${v.bookId}</th>
+                                              <td>${v.bookName}</td>
+                                              <td>${v.author}</td>
+                                              <td>${v.publisher}</td>
+                                              <td>${v.publishYear}</td>
+                                              <td>${v.price}</td>
                                            </tr>`);
             })
 
